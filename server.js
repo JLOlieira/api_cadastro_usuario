@@ -70,7 +70,10 @@ app.delete("/usuarios/:id", async (req, res) => {
   res.status(200).json({ message: "Usuario deletado com sucesso" });
 });
 
-app.listen(3000);
+const port = process.env.PORT || 3000;
+app.listen(port, () => {
+  console.log(`Servidor rodando na porta ${port}`);
+});
 
 /* 
 95097522
